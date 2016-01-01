@@ -6,6 +6,10 @@ app.config(function($routeProvider, $locationProvider) {
         templateUrl: 'partials/home.html',
         controller: 'HomeController'
       })
+      .when('/admin', {
+        templateUrl: 'partials/admin/dashboard.html',
+        controller: 'DashboardController'
+      })
       .otherwise({
         redirect: '/'
       });

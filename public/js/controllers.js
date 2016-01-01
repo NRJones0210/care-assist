@@ -1,3 +1,7 @@
 app.controller("HomeController", function ($scope) {
-  $scope.message = "Home Page"
+  $scope.message = "Login Page"
+})
+
+app.controller("DashboardController", function ($scope) {
+  $scope.message = "Admin Dashboard Page"
 })
