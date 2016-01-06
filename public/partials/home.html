@@ -1,1 +1,10 @@
 <h1>{{message}}</h1>
+<h3>User must be logged in to access this page</h3>
+<h3>If not logged in, user is redirected to <a ui-sref='login'>Login Page</a><br></h3>
+<h3>The content of this page will be dependant upon the role of the user</h3>
+<h3><a ui-sref='clients'>Clients</a><br></h3>
+<h3><a ui-sref='clients.new'>Clients New</a><br></h3>
+<br>
+<ul>
+  <li ng-repeat='friend in friends track by $index'>{{friend.name}}:{{friend.age}}</li>
+</ul>

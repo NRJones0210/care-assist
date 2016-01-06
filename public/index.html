@@ -9,11 +9,34 @@
     <link rel="stylesheet" href="./css/main.css"/>
     <base href="/">
   </head>
+
   <body>
-    <div ng-view></div>
+    <!-- <div ng-include="'./partials/navigation.html'"></div> -->
+    <div layout='row' class='layout-row' flex>
+      <md-sidenav class='site-sidenav md-sidenav-left md-whiteframe-20dp md-closed ng-isolate-scope md-locked-open sidenav' md-component-id='left' md-is-locked-open="$mdMedia('gt-sm')" tabindex='-1'>
+        <header class='nav-header'>
+          <a ng-href="/" href="/">
+            <img src="img/trinity-main-logo.png" alt="">
+          </a>
+        </header>
+        <md-content flex role='navigation' class='flex navigation'>
+        asdf
+        </md-content>
+      </md-sidenav>
+
+      <div layout='column' tabindex='-1' role='main' flex class='layout-column flex'>
+        <md-toolbar class='md-whiteframe-5dp site-content-toolbar'>
+        </md-toolbar>
+        <md-content md-scroll-y flex layout-padding class='layout-padding ng-scope flex'>
+          <div ui-view></div>
+        </md-content>
+      </div>
+    </div>        
+
     <!-- SCRIPTS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>

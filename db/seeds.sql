@@ -17,15 +17,15 @@ INSERT INTO
 INSERT INTO
     employees
     VALUES
-    ( default, 'Albus', 'Dumbledore' ),     -- Admin    of Hogwarts day-program
-    ( default, 'Minerva', 'McGonagall' ),   -- Manager  of Gryffindor House
-    ( default, 'Nearly-Headless', 'Nick' ), -- Employee of Gryffindor House
-    ( default, 'Severus', 'Snape' ),        -- Manager  of Slytherin  House
-    ( default, 'Bloody', 'Baron' ),         -- Employee of Slytherin  House
-    ( default, 'Filius', 'Flitwick' ),      -- Manager  of Ravenclaw  House
-    ( default, 'Grey', 'Lady' ),            -- Employee of Ravenclaw  House
-    ( default, 'Pomona', 'Sprout' ),        -- Manager  of Hufflepuff House
-    ( default, 'Fat', 'Friar' );            -- Employee of Hufflepuff House
+    ( default, 'Albus', 'Dumbledore' ),     -- Admin      of Hogwarts   Day-Program
+    ( default, 'Minerva', 'McGonagall' ),   -- Supervisor of Gryffindor House
+    ( default, 'Nearly-Headless', 'Nick' ), -- Employee   of Gryffindor House
+    ( default, 'Severus', 'Snape' ),        -- Supervisor of Slytherin  House
+    ( default, 'Bloody', 'Baron' ),         -- Employee   of Slytherin  House
+    ( default, 'Filius', 'Flitwick' ),      -- Supervisor of Ravenclaw  House
+    ( default, 'Grey', 'Lady' ),            -- Employee   of Ravenclaw  House
+    ( default, 'Pomona', 'Sprout' ),        -- Supervisor of Hufflepuff House
+    ( default, 'Fat', 'Friar' );            -- Employee   of Hufflepuff House
 
 INSERT INTO
     departments

@@ -1,0 +1,11 @@
+<h1>{{message}}</h1>
+<br>
+
+<ul>
+  <li ng-repeat='client in clientData track by $index'>
+    <a ui-sref="clients.show({id:{{client.id}}})">{{client.firstname}} {{client.lastname}}</a><br>
+  </li>
+</ul>
+
+<a ui-sref='clients.new'>Add New Client</a><br>
+
