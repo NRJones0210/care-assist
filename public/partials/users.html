@@ -1,0 +1,11 @@
+<h1>{{message}}</h1>
+<br>
+
+<ul>
+  <li ng-repeat='user in userData track by $index'>
+    <a ui-sref="users.show({id:{{user.id}}})">{{user.firstname}} {{user.lastname}}</a><br>
+  </li>
+</ul>
+
+<a ui-sref='users.new'>Add New User</a><br>
+

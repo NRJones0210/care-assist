@@ -15,7 +15,7 @@ app.config(['$urlRouterProvider', '$stateProvider', '$locationProvider', functio
       controller: 'LoginCtrl'
     })
 
-
+    // CLIENTS
     .state('clients', {
       url: '/clients',
       templateUrl: 'partials/clients.html',
@@ -45,6 +45,40 @@ app.config(['$urlRouterProvider', '$stateProvider', '$locationProvider', functio
         '@': {
           templateUrl: 'partials/clients.update.html',
           controller: 'ClientsUpdateCtrl'
+        }
+      }
+    })
+
+    // USERS
+    .state('users', {
+      url: '/users',
+      templateUrl: 'partials/users.html',
+      controller: 'UsersCtrl'
+    })
+    .state('users.new', {
+      url: '^/user/new',
+      views: {
+        '@': {
+          templateUrl: 'partials/users.new.html',
+          controller: 'UsersNewCtrl'
+        }
+      }
+    })
+    .state('users.show', {
+      url: '^/user/:id',
+      views: {
+        '@': {
+          templateUrl: 'partials/users.show.html',
+          controller: 'UsersShowCtrl'
+        }
+      }
+    })
+    .state('users.update', {
+      url: '^/user/edit/:id',
+      views: {
+        '@': {
+          templateUrl: 'partials/users.update.html',
+          controller: 'UsersUpdateCtrl'
         }
       }
     })

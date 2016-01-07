@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS clients CASCADE;
+DROP TABLE IF EXISTS users CASCADE;
 DROP TABLE IF EXISTS guardians CASCADE;
-DROP TABLE IF EXISTS employees CASCADE;
 DROP TABLE IF EXISTS departments CASCADE;
 
 CREATE TABLE clients (
@@ -9,13 +9,13 @@ CREATE TABLE clients (
   lastName varchar(45)
 );
 
-CREATE TABLE guardians (
+CREATE TABLE users (
   id serial primary key,
   firstName varchar(45),
   lastName varchar(45)
 );
 
-CREATE TABLE employees (
+CREATE TABLE guardians (
   id serial primary key,
   firstName varchar(45),
   lastName varchar(45)

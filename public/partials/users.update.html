@@ -1,0 +1,28 @@
+<h1>{{message}}</h1>
+<div layout="column" ng-cloak class="md-inline-form">
+  <md-content layout-padding>
+    <div>
+      <form name="updateUserForm">
+        <!-- <div layout-gt-sm="row"> -->
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>First name</label>
+            <input name='firstName' ng-model="userData.firstname" required>
+            <div ng-messages="updateUserForm.firstName.$error">
+              <div ng-message="required">This is required.</div>
+            </div>
+          </md-input-container>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Last name</label>
+            <input name='lastName' ng-model="userData.lastname" required>
+            <div ng-messages="updateUserForm.lastName.$error">
+              <div ng-message="required">This is required.</div>
+            </div>
+          </md-input-container>
+          <md-input-container class="md-block" flex-gt-sm>
+            <md-button class="md-raised md-primary" ng-click='updateUser()'>Save</md-button>
+          </md-input-container>
+        <!-- </div> -->
+      </form>
+    </div>
+  </md-content>
+</div>

@@ -15,7 +15,7 @@ INSERT INTO
     ( default, 'Amos', 'Diggory' );
 
 INSERT INTO
-    employees
+    users
     VALUES
     ( default, 'Albus', 'Dumbledore' ),     -- Admin      of Hogwarts   Day-Program
     ( default, 'Minerva', 'McGonagall' ),   -- Supervisor of Gryffindor House
