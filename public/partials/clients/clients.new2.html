@@ -1,0 +1,145 @@
+<!-- NEW CLIENT FORM -->
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-1'></div>
+    <div class='col-md-8'>
+      <form name="newClientForm">
+        <!-- First Name -->
+        <div class="form-group">
+          <label>First name</label>
+          <input type="text" name='firstName' class="form-control" ng-model="client.firstName">
+        </div>
+        <!-- Last Name -->
+        <div class="form-group">
+          <label>Last name</label>
+          <input type="text" name='lastName' class="form-control" ng-model="client.lastName">
+        </div>
+        <!-- Gender -->
+        <div class="form-group">
+          <label>Gender</label>
+          <div class="radio">
+            <label>
+              <input type="radio" name="gender" value="male" ng-model="client.gender">
+              Male
+            </label>
+            <label>
+              <input type="radio" name="gender" value="female" ng-model="client.gender">
+              Female
+            </label>
+          </div>
+        </div>
+        <!-- DOB -->
+        <div class="form-group">
+          <label name="dateBirth" class="control-label">Date of Birth</label>
+          <div class="control">
+            <input type="date" name="dateBirth" class="form-control" ng-model="client.dateBirth">
+          </div>
+        </div>
+        <!-- MEDICAL DIAGNOSIS -->
+        <div class="form-group">
+          <label>Medical Diagnosis</label>
+          <textarea name='medicalDiagnosis' class="form-control" ng-model="client.medicalDiagnosis"></textarea> 
+        </div>
+        <!-- GROUPS -->
+        <div class="form-group">
+          <label>Day Program
+            <input type="checkbox" ng-model="checkboxModel.value1">
+          </label><br/>
+          <label>Residential Housing
+            <input type="checkbox" ng-model="checkboxModel.value2">
+           </label><br/>
+          <!-- <tt>value2 = {{checkboxModel.value2}}</tt><br/>
+          PseudoCode ng-if show list of houses -->
+        </div>
+        <div class="form-group">
+          <label>Notes</label>
+          <textarea name='notes' class="form-control" ng-model="client.notes"></textarea> 
+        </div>
+        <!-- EMERGENCY CONTACTS -->
+        <div>
+        <h2>Emergency Contacts</h2>
+        </div>
+
+       <fieldset data-ng-repeat="emergencyContact in emergencyContacts">
+        <div class='well'>
+          <div class="form-group">
+            <label>First name</label>
+            <input type="text" name='firstName' class="form-control" ng-model="emergencyContact.firstName">
+          </div>
+          <div class="form-group">
+            <label>Last name</label>
+            <input type="text" name='lastName' class="form-control" ng-model="emergencyContact.lastName">
+          </div>
+          <div class="form-group">
+            <label>Relation</label>
+            <input type="text" name='relation' class="form-control" ng-model="emergencyContact.relation">
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="text" name='phone' class="form-control" ng-model="emergencyContact.phone">
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" name='email' class="form-control" ng-model="emergencyContact.email">
+          </div>
+          <div class="form-group">
+            <label>Address</label>
+            <input type="text" name='address' class="form-control" ng-model="emergencyContact.address">
+          </div>
+          <div class="form-group">
+            <label>Notes</label>
+            <textarea name='notes' class="form-control" ng-model="emergencyContact.notes"></textarea> 
+          </div>
+          <button class="remove" ng-show="$last" ng-click="removeEmergencyContact()">-</button>
+        </div>
+       </fieldset>
+       <button class="addfields" ng-click="addNewEmergencyContact()">Add Emergency Contact</button>
+
+        <!-- DOCTORS -->
+        <div>
+        <h2>Doctors</h2>
+        </div>
+
+       <fieldset data-ng-repeat="doctor in doctors">
+        <div class='well'>
+          <div class="form-group">
+            <label>First name</label>
+            <input type="text" name='firstName' class="form-control" ng-model="doctor.firstName">
+          </div>
+          <div class="form-group">
+            <label>Last name</label>
+            <input type="text" name='lastName' class="form-control" ng-model="doctor.lastName">
+          </div>
+          <div class="form-group">
+            <label>Type</label>
+            <input type="text" name='type' class="form-control" ng-model="doctor.type">
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="text" name='phone' class="form-control" ng-model="doctor.phone">
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" name='email' class="form-control" ng-model="doctor.email">
+          </div>
+          <div class="form-group">
+            <label>Address</label>
+            <input type="text" name='address' class="form-control" ng-model="doctor.address">
+          </div>
+          <div class="form-group">
+            <label>Notes</label>
+            <textarea name='notes' class="form-control" ng-model="doctor.notes"></textarea> 
+          </div>
+          <button class="remove" ng-show="$last" ng-click="removeDoctor()">-</button>
+        </div>
+       </fieldset>
+       <button class="addfields" ng-click="addNewDoctor()">Add Doctor</button>
+
+
+        <!-- SUBMIT BUTTON -->
+        <br>
+        <input class="btn form btn-primary" type='submit' value='Add Client' ng-click='createClient()'/>
+      </form>
+    </div>
+  </div>
+</div>

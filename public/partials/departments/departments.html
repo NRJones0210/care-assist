@@ -1,0 +1,26 @@
+<h1>{{message}}</h1>
+
+<div ng-view="" class="main ng-scope">
+  <div class="container ng-scope">
+    <div class="category ng-scope">
+      <div class="ng-scope">
+        <div class="heading">
+        </div>
+        <div class="clearfix"></div>
+        <div class="row">
+          <div ng-repeat='department in departmentData track by $index' class="col ng-scope">
+            <div class="card center">
+              <a ui-sref="departments.show({department_id:{{department.department_id}}})">
+                <md-icon>home</md-icon>
+                <h3 class="ng-binding">{{department.name}}</h3>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<a ui-sref='departments.new'>Add New Department</a><br>
+

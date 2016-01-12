@@ -1,0 +1,20 @@
+<h1>{{message}}</h1>
+
+<div layout="column" ng-cloak class="md-inline-form">
+  <md-content layout-padding>
+    <div>
+      <form name="newDepartmentForm">
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Department Name</label>
+          <input name='name' ng-model="department.name" required>
+          <div ng-messages="newDepartmentForm.name.$error">
+            <div ng-message="required">This is required.</div>
+          </div>
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm>
+          <md-button class="md-raised md-primary" ng-click='createDepartment()'>Submit</md-button>
+        </md-input-container>
+      </form>
+    </div>
+  </md-content>
+</div>

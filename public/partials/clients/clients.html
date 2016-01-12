@@ -1,0 +1,35 @@
+<h1>{{message}}</h1>
+<a ui-sref='clients.new'>Add New Client</a><br>
+<div ng-view="" class="main ng-scope">
+  <div class="container ng-scope">
+    <div class="category ng-scope">
+      <div class="ng-scope">
+        <div class="heading">
+        </div>
+        <div class="clearfix"></div>
+        <div class="row">
+          <div ng-repeat='client in clientData track by $index' class="col ng-scope">
+            <div class="card center">
+              <a ui-sref="clients.show({client_id:{{client.client_id}}})">
+                <md-icon>person</md-icon>
+                <h3 class="ng-binding">{{client.firstname}} {{client.lastname}}</h3>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col ng-scope">
+            <div class="card center">
+              <a ui-sref="clients.new">
+                <md-icon>person</md-icon>
+                <h3 class="ng-binding">+ Add Client</h3>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<a ui-sref='clients.new'>Add New Client</a><br>

@@ -1,4 +1,6 @@
-<h1>{{message}}</h1>
+<h1>{{clientData.firstname}} {{clientData.lastname}}</h1>
+<a ui-sref="clients.update({client_id:clientData.client_id})"><md-button class="md-raised md-primary">Edit</md-button></a>
+<md-button class="md-raised md-primary" ng-click='deleteClient()'>Delete</md-button>
 
 <div ng-view="" class="main ng-scope">
   <div class="container ng-scope">
@@ -10,17 +12,9 @@
         <div class="row">
           <div class="col ng-scope">
             <div class="card center">
-              <a ui-sref='clients'>
+              <a ui-sref="observations({client_id:clientData.client_id})">
                 <md-icon>people</md-icon>
-                <h3 class="ng-binding">Clients</h3>
-              </a>
-            </div>
-          </div>
-          <div class="col ng-scope">
-            <div class="card center">
-              <a ui-sref='departments'>
-                <md-icon>home</md-icon>
-                <h3 class="ng-binding">Departments</h3>
+                <h3 class="ng-binding">Observation Logs</h3>
               </a>
             </div>
           </div>
@@ -28,7 +22,7 @@
             <div class="card center">
               <a ui-sref='clients'>
                 <md-icon>people</md-icon>
-                <h3 class="ng-binding">Employees</h3>
+                <h3 class="ng-binding">Department Information</h3>
               </a>
             </div>
           </div>
@@ -36,7 +30,15 @@
             <div class="card center">
               <a ui-sref='clients'>
                 <md-icon>people</md-icon>
-                <h3 class="ng-binding">Guardians</h3>
+                <h3 class="ng-binding">Guardian Information</h3>
+              </a>
+            </div>
+          </div>
+          <div class="col ng-scope">
+            <div class="card center">
+              <a ui-sref='clients'>
+                <md-icon>people</md-icon>
+                <h3 class="ng-binding">Doctor Information</h3>
               </a>
             </div>
           </div>

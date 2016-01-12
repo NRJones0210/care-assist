@@ -2,17 +2,16 @@
 <html ng-app='trinityApp'>
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
     <title>Trinity Services</title>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css"/>
     <base href="/">
   </head>
-
-  <body>
-    <!-- <div ng-include="'./partials/navigation.html'"></div> -->
-    <div layout='row' class='layout-row' flex>
+  <body ng-controller='MenuCtrl'>
+    <div layout='row' class='layout-row'>
+      <!-- SIDENAV -->
       <md-sidenav class='site-sidenav md-sidenav-left md-whiteframe-20dp md-closed ng-isolate-scope md-locked-open sidenav' md-component-id='left' md-is-locked-open="$mdMedia('gt-sm')" tabindex='-1'>
         <header class='nav-header'>
           <a ng-href="/" href="/">
@@ -20,13 +19,31 @@
           </a>
         </header>
         <md-content flex role='navigation' class='flex navigation'>
-        asdf
+          <ul class='docs-menu'>
+            <li ng-repeat='item in menu' class='parent-list-item' ng-class="{'parentActive' : isSelectionSelected(item)}">
+              <a ui-sref='{{item.link}}'>
+                <menu-toggle item="item" class='ng-scope ng-isolate-scope'>
+                  <button class ='md-button-toggle md-button md-ink-ripple' type='button' ng-click='toggle()' aria-controls='docs-menu-Demos' aria-expanded='false'>
+                    <div flex layout='row' class='ng-binding ng-scope layout-row flex'>
+                      <md-icon>{{item.icon}}</md-icon>&nbsp;
+                      {{item.title}}
+                      <span flex class='flex'></span>
+                    </div>
+                  </button>
+                </menu-toggle>
+              </a>
+            </li>
+          </ul> 
         </md-content>
       </md-sidenav>
-
       <div layout='column' tabindex='-1' role='main' flex class='layout-column flex'>
+        <!-- TOOLBAR -->
         <md-toolbar class='md-whiteframe-5dp site-content-toolbar'>
+          <md-button ng-click="toggleSidenav('left')" hide-gt-md aria-label="Menu">
+            <md-icon class='menu-icon'>menu</md-icon>
+          </md-button>
         </md-toolbar>
+        <!-- CONTENT -->
         <md-content md-scroll-y flex layout-padding class='layout-padding ng-scope flex'>
           <div ui-view></div>
         </md-content>
@@ -42,8 +59,23 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
-    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    <script src="./js/angularapp.js"></script>
-    <script src="./js/controllers.js"></script>
+    <script src="https://cdn.jsdelivr.net/angular-material-icons/0.4.0/angular-material-icons.min.js"></script> 
+    <!-- ANGULAR APP -->
+    <script src="./js/app/app.angular.js"></script>
+    <!-- CONFIG FILES -->
+    <script src="./js/config/config.home.js"></script>
+    <script src="./js/config/config.login.js"></script>
+    <script src="./js/config/config.clients.js"></script>
+    <script src="./js/config/config.departments.js"></script>
+    <script src="./js/config/config.observations.js"></script>
+    <script src="./js/config/config.users.js"></script>
+    <!-- CONTROLLER FILES -->
+    <script src="./js/controllers/controllers.home.js"></script>
+    <script src="./js/controllers/controllers.login.js"></script>
+    <script src="./js/controllers/controllers.menu.js"></script>
+    <script src="./js/controllers/controllers.clients.js"></script>
+    <script src="./js/controllers/controllers.departments.js"></script>
+    <script src="./js/controllers/controllers.observations.js"></script>
+    <script src="./js/controllers/controllers.users.js"></script>
   </body>
 </html>
