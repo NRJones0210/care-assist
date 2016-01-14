@@ -5,7 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var pg = require('pg');
-var conString = "postgres://@localhost/trinity_services";
+var conString = process.env.DATABASE_URL || "postgres://@localhost/trinity_services";
 
 var client = new pg.Client(conString);
 client.connect(function(err) {
