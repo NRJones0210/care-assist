@@ -287,6 +287,47 @@ router.delete('/api/v1/departments/:department_id', function(req, res) {
     });
 });
 
+// CLIENT_OBSERVATION LOGS
+
+router.get('/api/v1/clients/:client_id/observations/all', function(req, res) {
+    var results = [];
+    var client_id = req.params.client_id;
+    // Get a Postgres client from the connection pool
+    pg.connect(conString, function(err, client, done) {
+        // Handle connection errors
+        if(err) {
+          done();
+          console.log(err);
+          return res.status(500).json({ success: false, data: err});
+        }
+        // SQL Query > Select Data
+        var query = client.query("SELECT * FROM client_observations WHERE client_id=($1)", [client_id]);
+
+        // Stream results back one row at a time
+        query.on('row', function(row) {
+            results.push(row);
+        });
+        // After all data is returned, close connection and return results
+        query.on('end', function() {
+            done();
+            return res.json(results);
+        });
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // USERS
 router.get('/api/v1/users', function(req, res) {

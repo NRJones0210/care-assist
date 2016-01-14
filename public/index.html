@@ -6,6 +6,8 @@
     <title>Trinity Services</title>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css"/>
     <base href="/">
   </head>
@@ -25,7 +27,7 @@
                 <menu-toggle item="item" class='ng-scope ng-isolate-scope'>
                   <button class ='md-button-toggle md-button md-ink-ripple' type='button' ng-click='toggle()' aria-controls='docs-menu-Demos' aria-expanded='false'>
                     <div flex layout='row' class='ng-binding ng-scope layout-row flex'>
-                      <md-icon>{{item.icon}}</md-icon>&nbsp;
+                      <md-icon>{{item.icon}}</md-icon>&nbsp;&nbsp;
                       {{item.title}}
                       <span flex class='flex'></span>
                     </div>
@@ -59,7 +61,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/angular-material-icons/0.4.0/angular-material-icons.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/angular-material-icons/0.4.0/angular-material-icons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/angular.chartjs/latest/angular-chart.min.js "></script>
     <!-- ANGULAR APP -->
     <script src="./js/app/app.angular.js"></script>
     <!-- CONFIG FILES -->
@@ -67,6 +71,7 @@
     <script src="./js/config/config.login.js"></script>
     <script src="./js/config/config.clients.js"></script>
     <script src="./js/config/config.departments.js"></script>
+    <script src="./js/config/config.client_observations.js"></script>
     <script src="./js/config/config.observations.js"></script>
     <script src="./js/config/config.users.js"></script>
     <!-- CONTROLLER FILES -->
@@ -75,7 +80,10 @@
     <script src="./js/controllers/controllers.menu.js"></script>
     <script src="./js/controllers/controllers.clients.js"></script>
     <script src="./js/controllers/controllers.departments.js"></script>
+    <script src="./js/controllers/controllers.client_observations.js"></script>
     <script src="./js/controllers/controllers.observations.js"></script>
     <script src="./js/controllers/controllers.users.js"></script>
+    <!-- FACTORIES FILES -->
+    <script src="./js/factories/factories.client_observations.js"></script>
   </body>
 </html>

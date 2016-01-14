@@ -9,22 +9,19 @@
         <div class="clearfix"></div>
         <div class="row">
           <div ng-repeat='client in clientData track by $index' class="col ng-scope">
-            <div class="card center">
-              <a ui-sref="clients.show({client_id:{{client.client_id}}})">
-                <md-icon>person</md-icon>
-                <h3 class="ng-binding">{{client.firstname}} {{client.lastname}}</h3>
+            <md-card class="card-hover" style="height:150px;">
+              <a ui-sref="clients.show({client_id:{{client.client_id}}})" style="color: #000000">
+                <md-card-title style="height:80px;">
+                  <md-card-title-media>
+                    <img src="{{client.img}}" style="width:100%; height:100px">
+                    <div class="md-media-md card-media"></div>
+                  </md-card-title-media>
+                </md-card-title>
+                <md-card-content class="center">
+                  <p>{{client.firstname}} {{client.lastname}}</p>
+                </md-card-content>
               </a>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col ng-scope">
-            <div class="card center">
-              <a ui-sref="clients.new">
-                <md-icon>person</md-icon>
-                <h3 class="ng-binding">+ Add Client</h3>
-              </a>
-            </div>
+            </md-card>
           </div>
         </div>
       </div>
@@ -32,4 +29,3 @@
   </div>
 </div>
 </div>
-<a ui-sref='clients.new'>Add New Client</a><br>

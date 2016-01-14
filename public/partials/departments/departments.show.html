@@ -1,6 +1,30 @@
-<h1>{{message}}</h1>
-<h1>
-{{departmentData.name}}
-</h1>
-<a ui-sref="departments.update({department_id:departmentData.department_id})"><md-button class="md-raised md-primary">Edit</md-button></a>
-<md-button class="md-raised md-primary" ng-click='deleteDepartment()'>Delete</md-button>
+<div ng-view="" class="main ng-scope">
+  <div class="container ng-scope">
+    <div class="category ng-scope">
+      <div class="ng-scope">
+        <div class="heading">
+        </div>
+        <div class="clearfix"></div>
+        <md-card class='client-mdcard'>
+          <md-card-title>
+            <md-card-title-text>
+              <span class="md-headline">{{departmentData.name}}</span>
+              <span class="md-subhead">Phone Number: (555)123-4567</span>
+              <span class="md-subhead">Address: 544 Main Street</span>
+              <span class="md-subhead">City: Philadelphia</span>
+            </md-card-title-text>
+            <md-card-title-media>
+              <div class="md-media-lg card-media"><img src="http://vignette2.wikia.nocookie.net/fictionalcompanies/images/5/50/Paddy's_Pub_Exterior.jpg/revision/latest?cb=20150202142118"></div>
+            </md-card-title-media>
+          </md-card-title>
+          <md-card-actions layout="row" layout-align="end center">
+          </md-card-actions>
+        </md-card>
+        <div class='row' layout="row" layout-align="end center">
+          <span><a ui-sref="departments.update({department_id:departmentData.department_id})"><md-button><md-icon>edit</md-icon>&nbsp;edit</md-button></a>
+            <md-button ng-click='deleteDepartment()'><md-icon>delete</md-icon>&nbsp;delete</md-button></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

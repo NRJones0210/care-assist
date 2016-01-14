@@ -1,1 +1,1 @@
-var app = angular.module('trinityApp', ['ui.router', 'ngMaterial'])
+var app = angular.module('trinityApp', ['ui.router', 'ngMaterial', 'chart.js'])

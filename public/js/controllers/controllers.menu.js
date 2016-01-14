@@ -27,7 +27,7 @@ app.controller('MenuCtrl', ['$scope','$mdSidenav', function($scope, $mdSidenav){
     },
     {
       link : 'home',
-      title: 'Parents',
+      title: 'Guardians',
       icon: 'people'
     }
   ];

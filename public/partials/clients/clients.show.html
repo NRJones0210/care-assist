@@ -1,7 +1,3 @@
-<h1>{{clientData.firstname}} {{clientData.lastname}}</h1>
-<a ui-sref="clients.update({client_id:clientData.client_id})"><md-button class="md-raised md-primary">Edit</md-button></a>
-<md-button class="md-raised md-primary" ng-click='deleteClient()'>Delete</md-button>
-
 <div ng-view="" class="main ng-scope">
   <div class="container ng-scope">
     <div class="category ng-scope">
@@ -9,11 +5,25 @@
         <div class="heading">
         </div>
         <div class="clearfix"></div>
+        <md-card class='client-mdcard'>
+          <md-card-title>
+            <md-card-title-text>
+              <span class="md-headline">{{clientData.firstname}} {{clientData.lastname}}</span>
+              <span class="md-subhead">Department: Paddy's Pub</span>
+            </md-card-title-text>
+            <md-card-title-media>
+              <div class="md-media-lg card-media"><img src="{{clientData.img}}"></div>
+            </md-card-title-media>
+          </md-card-title>
+          <md-card-actions layout="row" layout-align="end center">
+          </md-card-actions>
+        </md-card>
+
         <div class="row">
           <div class="col ng-scope">
             <div class="card center">
-              <a ui-sref="observations({client_id:clientData.client_id})">
-                <md-icon>people</md-icon>
+              <a ui-sref="client_observations({client_id:clientData.client_id})">
+                <md-icon>assessment</md-icon>
                 <h3 class="ng-binding">Observation Logs</h3>
               </a>
             </div>
@@ -21,7 +31,7 @@
           <div class="col ng-scope">
             <div class="card center">
               <a ui-sref='clients'>
-                <md-icon>people</md-icon>
+                <md-icon>home</md-icon>
                 <h3 class="ng-binding">Department Information</h3>
               </a>
             </div>
@@ -37,11 +47,47 @@
           <div class="col ng-scope">
             <div class="card center">
               <a ui-sref='clients'>
-                <md-icon>people</md-icon>
+                <md-icon><i class="material-icons">local_hospital</i></md-icon>
                 <h3 class="ng-binding">Doctor Information</h3>
               </a>
             </div>
           </div>
+          <div class="col ng-scope">
+            <div class="card center">
+              <a ui-sref='clients'>
+                <md-icon>description</md-icon>
+                <h3 class="ng-binding">Diagnosis</h3>
+              </a>
+            </div>
+          </div>
+          <div class="col ng-scope">
+            <div class="card center">
+              <a ui-sref='clients'>
+                <md-icon><i class="material-icons">local_pharmacy</i></md-icon>
+                <h3 class="ng-binding">Medications</h3>
+              </a>
+            </div>
+          </div>
+          <div class="col ng-scope">
+            <div class="card center">
+              <a ui-sref='clients'>
+                <md-icon>warning</md-icon>
+                <h3 class="ng-binding">Incident Reports</h3>
+              </a>
+            </div>
+          </div>
+          <div class="col ng-scope">
+            <div class="card center">
+              <a ui-sref='clients'>
+                <md-icon>note</md-icon>
+                <h3 class="ng-binding">Additional Notes</h3>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class='row' layout="row" layout-align="end center">
+          <span><a ui-sref="clients.update({client_id:clientData.client_id})"><md-button><md-icon>edit</md-icon>&nbsp;edit</md-button></a>
+            <md-button ng-click='deleteClient()'><md-icon>delete</md-icon>&nbsp;delete</md-button></span>
         </div>
       </div>
     </div>

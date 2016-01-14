@@ -9,7 +9,8 @@ DROP TABLE IF EXISTS guardians CASCADE;
 CREATE TABLE clients (
   client_id serial primary key,
   firstName varchar(45),
-  lastName varchar(45)
+  lastName varchar(45),
+  img text
 );
 
 CREATE TABLE departments (
@@ -23,11 +24,14 @@ CREATE TABLE observations (
 );
 
 CREATE TABLE client_observations (
+  client_observation_id serial primary key,
   client_id integer REFERENCES clients,
   observation_id integer REFERENCES observations,
-  quantity integer,
-  PRIMARY KEY (client_id, observation_id)
+  entry_date date,
+  quantity integer
 );
+
+
 
 
 CREATE TABLE users (
