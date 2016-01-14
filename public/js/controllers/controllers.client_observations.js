@@ -36,8 +36,8 @@ app.controller("ClientObservationsShowAllCtrl", ["$scope", "$http", "$stateParam
   $scope.series = ['Seizures', 'Outbursts', 'Biting'];
   $scope.data = [
     [2, 3, 4, 3, 2],
-    [0, 4, 5, 2, 4],
-    [null, null, null, 5]
+    [0, 4, 5, 2, 4, 4, 3, 3, 4],
+    [null, null, null, 2]
   ];
   $scope.onClick = function (points, evt) {
     console.log(points, evt);
