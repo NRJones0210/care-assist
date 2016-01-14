@@ -35,7 +35,7 @@ app.controller("ClientObservationsShowAllCtrl", ["$scope", "$http", "$stateParam
   $scope.labels = ["2016-01-01"];
   $scope.series = ['Seizures', 'Outbursts', 'Biting'];
   $scope.data = [
-    [2],
+    [2, 3, 4, 3, 2],
     [0, 4, 5, 2, 4],
     [null, null, null, 5]
   ];
